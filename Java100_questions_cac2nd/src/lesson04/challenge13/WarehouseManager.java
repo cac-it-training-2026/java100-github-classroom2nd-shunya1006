@@ -63,32 +63,44 @@ public class WarehouseManager {
 
 	public static void main(String[] args) throws IOException {
 
-
-		//配列の宣言および初期化処理を記述する
-
+		String[] comment = { "へい！らっしゃい", "何にしますか！今日は活きのいいコハダが入ってますよ", "まいどあり！！またどうぞ" };//配列の宣言および初期化処理を記述する
 
 		System.out.println("Yさん：");
 		System.out.println("まず、MISAKI○の今の状態を確かめようかな。\n");
 
-
-		//三つのあいさつパターンの出力処理を記述する
-
+		System.out.println("あいさつパターン１・・・「" + comment[0] + "」");
+		System.out.println("あいさつパターン2・・・「" + comment[1] + "」");
+		System.out.println("あいさつパターン3・・・「" + comment[2] + "」");//三つのあいさつパターンの出力処理を記述する
 
 		System.out.println("Yさん：");
 		System.out.println("うわぁ～。どれか変更しよう。\n");
 
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
+		System.out.println("どのパターンを変更しますか");
+		String str = br.readLine();
+		int num = Integer.parseInt(str);
 
-		//入力処理および入力値の代入処理
-
+		if (num == 1) {
+			System.out.println("あいさつを吹き込んでください＞");
+			String str2 = br.readLine();
+			comment[0] = str2;
+		} else if (num == 2) {
+			System.out.println("あいさつを吹き込んでください＞");
+			String str3 = br.readLine();
+			comment[1] = str3;
+		} else {
+			System.out.println("あいさつを吹き込んでください＞");
+			String str4 = br.readLine();
+			comment[2] = str4;
+		} //入力処理および入力値の代入処理
 
 		System.out.println("\nYさん：");
 		System.out.println("よし。もう一度確かめてみよう。\n");
 
-
-		//三つのあいさつパターンの出力処理を記述する
-
+		System.out.println("あいさつパターン１・・・「" + comment[0] + "」");
+		System.out.println("あいさつパターン2・・・「" + comment[1] + "」");
+		System.out.println("あいさつパターン3・・・「" + comment[2] + "」");//三つのあいさつパターンの出力処理を記述する
 
 		System.out.println("Yさん：");
 		System.out.println("まあ少しはマシになったかな。");

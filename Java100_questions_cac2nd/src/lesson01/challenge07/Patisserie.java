@@ -41,6 +41,64 @@
 
 package lesson01.challenge07;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class Patisserie {
+	public static void main(String[] args) throws IOException {
+		System.out.println("たいへんお待たせしました。");
+		System.out.println("[ポエール・ネルメ]");
+		System.out.println("ただいまより開店です！！");
+
+		System.out.println("\n本日のおすすめ商品です。\n");
+		System.out.println("シトロン		\\250");
+		System.out.println("ショコラ		\\280");
+		System.out.println("ピスターシュ	\\320");
+
+		double ci = 30;
+		double sho = 30;
+		double pi = 30;
+
+		System.out.println("本日のおすすめ商品です。\n");
+		System.out.println("シトロン		\\250・・・残り" + ci + "個");
+		System.out.println("ショコラ		\\280・・・残り" + sho + "個");
+		System.out.println("ピスターシュ	\\320・・・残り" + pi + "個");
+		System.out.println("それぞれ何個ずつ買いますか？(最大30個まで)");
+
+		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("シトロン	>");
+		String cistr = reader.readLine();
+		double cicount = Double.parseDouble(cistr);
+
+		System.out.println("ショコラ	>");
+		String shostr = reader.readLine();
+		double shocount = Double.parseDouble(shostr);
+
+		System.out.println("ピスターシュ	>");
+		String pistr = reader.readLine();
+		double picount = Double.parseDouble(pistr);
+
+		System.out.println("シトロン		" + cicount + "個");
+		System.out.println("ショコラ		" + shocount + "個");
+		System.out.println("ピスターシュ	" + picount + "個");
+
+		double totalcount = cicount + shocount + picount;
+		int totalprice = (int) (250 * cicount + 280 * shocount + 320 * picount);
+
+		System.out.println("\n合計個数		" + totalcount + "個");
+		System.out.println("合計金額		" + totalprice + "円");
+		System.out.println("\nをお買い上げですね。\n承りました。");
+
+		ci = (int) ci - cicount;
+		sho = (int) sho - shocount;
+		pi = (int) pi - picount;
+
+		System.out.println("\n本日のおすすめ商品です。\n");
+		System.out.println("シトロン		\\250・・・残り" + ci + "個");
+		System.out.println("ショコラ		\\280・・・残り" + sho + "個");
+		System.out.println("ピスターシュ	\\320・・・残り" + pi + "個");
+
+	}
 
 }
